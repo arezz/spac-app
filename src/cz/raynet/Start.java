@@ -6,13 +6,8 @@
 package cz.raynet;
 
 import cz.raynet.core.AppConnectionConfig;
-import cz.raynet.dto.Category;
-import cz.raynet.dto.Racer;
-import cz.raynet.dto.Team;
 import cz.raynet.spac.FileParser;
 import cz.raynet.spac.IFileParser;
-import cz.raynet.spac.ISpacDataManager;
-import cz.raynet.spac.SpacDataManager;
 
 /**
  * @author arezz
@@ -32,28 +27,41 @@ public class Start {
         
         initDBConnection();
         
-        ISpacDataManager spacDM = SpacDataManager.getInstance();
+        //processStatsOld();
         
-        IFileParser parser = FileParser.getInstance();
+        //processStatisticsOverall();
+
+    }
+    
+    public static void processStatisticsOverall() {
+    	
+    	//ISpacDataManager spacDM = SpacDataManager.getInstance();        
+       
+    	IFileParser parser = FileParser.getInstance();
+        
+        //parser.clearDatabaseTableResultCSV(2011);
+        parser.parseAllResultsFromCSV2011("C:\\poradi2011.csv");  
+    }
+    
+    public static void processStatsOld() {
+/*    	
+    	ISpacDataManagerOld spacDMold = SpacDataManagerOld.getInstance();
+        
+        IFileParserOld parserOld = FileParserOld.getInstance();
         //parser.parseRacersFromFile("C:\\racers_export_teams.csv");
         //parser.parseResultsFromFile("C:\\01_Staric_all.csv", 1);
         
-        //parser.clearDatabaseTableResultCSV(2011);
-        parser.parseAllResultsFromCSV2011("C:\\poradi.csv");       
-        
-        
-        for (Racer r : spacDM.getRacers(2010).values()) {
+        for (Racer r : spacDMold.getRacersOld(2010).values()) {
             //System.out.println(r.toString());
         }
         
-        for (Category c : spacDM.getCategories().values()) {
+        for (Category c : spacDMold.getCategoriesOld().values()) {
             //System.out.println(c.toString());
         }
         
-        for (Team t : spacDM.getTeams(2010)) {
+        for (Team t : spacDMold.getTeamsOld(2010)) {
             //System.out.println(t.toString());
         }
-
+ */
     }
-
 }

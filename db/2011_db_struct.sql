@@ -1,9 +1,9 @@
 CREATE DATABASE `spac-stats`;
 
 
-DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS `category_old`;
 
-CREATE TABLE `category` (
+CREATE TABLE `category_old` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `prefix` varchar(8) NOT NULL,
   `name` varchar(64) NOT NULL,
@@ -13,9 +13,9 @@ CREATE TABLE `category` (
 
 
 
-DROP TABLE IF EXISTS `race`;
+DROP TABLE IF EXISTS `race_old`;
 
-CREATE TABLE `race` (
+CREATE TABLE `race_old` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `date` date DEFAULT NULL,
@@ -27,9 +27,9 @@ CREATE TABLE `race` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `racer`;
+DROP TABLE IF EXISTS `racer_old`;
 
-CREATE TABLE `racer` (
+CREATE TABLE `racer_old` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_category` int(11) NOT NULL,
   `id_team` int(11) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `racer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-DROP TABLE IF EXISTS `result`;
+DROP TABLE IF EXISTS `result_old`;
 
 CREATE TABLE `result` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -59,9 +59,9 @@ CREATE TABLE `result` (
 
 
 
-DROP TABLE IF EXISTS `result_team`;
+DROP TABLE IF EXISTS `result_team_old`;
 
-CREATE TABLE `result_team` (
+CREATE TABLE `result_team_old` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_race` int(11) NOT NULL,
   `id_team` int(11) NOT NULL,
@@ -71,9 +71,9 @@ CREATE TABLE `result_team` (
 
 
 
-DROP TABLE IF EXISTS `team`;
+DROP TABLE IF EXISTS `team_old`;
 
-CREATE TABLE `team` (
+CREATE TABLE `team_old` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) NOT NULL,
   `count_racers` int(11) DEFAULT '0',

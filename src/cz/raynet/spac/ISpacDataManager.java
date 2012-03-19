@@ -5,13 +5,11 @@
  */
 package cz.raynet.spac;
 
-import java.util.*;
+import java.util.Map;
 
 import cz.raynet.core.IDataManager;
 import cz.raynet.dto.Category;
-import cz.raynet.dto.Racer;
 import cz.raynet.dto.RacerCSVLineDto;
-import cz.raynet.dto.Team;
 
 /**
  * @author arezz
@@ -19,14 +17,9 @@ import cz.raynet.dto.Team;
  *
  */
 public interface ISpacDataManager extends IDataManager {
-
-    public Map<String,Category> getCategories();
-    public List<Team> getTeams(int season);
-    public Map<Integer,Racer> getRacers(int season);
     
-    public boolean clearDatabaseTableResultCSV(int year);
-    
-    public boolean insertRacer(Racer racer);
+	public Map<String,Category> getCategories();
+    public boolean clearDatabaseTableResultCSV(int year);    
     public void storeRacerCsvLine2011(RacerCSVLineDto racer);
     
 }

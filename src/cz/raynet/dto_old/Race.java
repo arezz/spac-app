@@ -3,7 +3,7 @@
  * RAYNET s.r.o. PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  * www.raynet.cz
  */
-package cz.raynet.dto;
+package cz.raynet.dto_old;
 
 import java.sql.Date;
 

@@ -9,13 +9,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import cz.raynet.core.AbstractDataManager;
 import cz.raynet.dto.Category;
-import cz.raynet.dto.Racer;
 import cz.raynet.dto.RacerCSVLineDto;
-import cz.raynet.dto.Team;
 
 /**
  * @author arezz
@@ -35,7 +34,7 @@ public class SpacDataManager extends AbstractDataManager implements ISpacDataMan
         Map<String,Category> map = new HashMap<String,Category>();
         try {
             connection = getDAO().getConnection();
-            PreparedStatement ps = connection.prepareStatement(ESQLCommandsSpac.SELECT_CATEGORIES);
+            PreparedStatement ps = connection.prepareStatement(ESQLCommandsSpac.SELECT_SPAC_CATEGORIES);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 Category cat = new Category();
@@ -54,91 +53,6 @@ public class SpacDataManager extends AbstractDataManager implements ISpacDataMan
             e.printStackTrace();
         }
         return map;
-    }
-    
-    public List<Team> getTeams(int season) {
-        Connection connection = null;
-        List<Team> list = new ArrayList<Team>();
-        try {
-            connection = getDAO().getConnection();
-            PreparedStatement ps = connection.prepareStatement(ESQLCommandsSpac.SELECT_TEAMS);
-            ps.setInt(1, season);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Team team = new Team();
-                team.setId(rs.getInt("id"));
-                team.setName(rs.getString("name"));
-                team.setRacersCount(rs.getInt("count_racers"));
-                team.setSeason(rs.getInt("season"));
-                
-                list.add(team);
-            }
-            rs.close();
-            ps.close();
-        } catch (SQLException e) {
-            //System.err.println(e.toString());
-            e.printStackTrace();
-        }
-        return list;
-    }
-    
-    public Map<Integer,Racer> getRacers(int season) {
-        Connection connection = null;
-        Map<Integer, Racer> map = new HashMap<Integer, Racer>();
-        try {
-            connection = getDAO().getConnection();
-            PreparedStatement ps = connection.prepareStatement(ESQLCommandsSpac.SELECT_RACERS);
-            ps.setInt(1, season);
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()) {
-                Racer racer = new Racer();
-                Integer number = rs.getInt("spac_number");
-                racer.setId(rs.getInt("id"));
-                racer.setIdCategory(rs.getInt("id_category"));
-                racer.setIdTeam(rs.getInt("id_team"));
-                racer.setSpacNumber(number);
-                racer.setFirstName(rs.getString("first_name"));
-                racer.setSurname(rs.getString("surname"));
-                racer.setSeason(season);
-                racer.setYearBorn(rs.getInt("year_born"));
-                racer.setTeamName(rs.getString("team_name"));
-                
-                map.put(number, racer);
-            }
-            rs.close();
-            ps.close();
-        } catch (SQLException e) {
-          //System.err.println(e.toString());
-            e.printStackTrace();
-        }
-        return map;
-    }
-    
-    
-    public boolean insertRacer(Racer racer) {
-        Connection connection = null;
-        boolean result = false;
-        try {
-            connection = getDAO().getConnection();
-            PreparedStatement ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER);
-            ps.setInt(1, racer.getIdCategory());
-            ps.setInt(2, racer.getIdTeam());
-            ps.setString(3, racer.getFirstName());
-            ps.setString(4, racer.getSurname());
-            ps.setInt(5, racer.getYearBorn());
-            ps.setInt(6, racer.getSpacNumber());
-            ps.setString(7, racer.getTeamName());
-            
-            if (ps.executeUpdate() == 1) {
-                result = true;
-            }
-            
-            ps.close();
-        } catch (SQLException e) {
-          //System.err.println(e.toString());
-            e.printStackTrace();
-        }
-        return result;
     }
     
     public boolean clearDatabaseTableResultCSV(int year) {

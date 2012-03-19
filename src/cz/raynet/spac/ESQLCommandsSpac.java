@@ -12,17 +12,10 @@ package cz.raynet.spac;
  */
 public class ESQLCommandsSpac {
 
-    public static final String SELECT_CATEGORIES = "SELECT * FROM category";
-    
-    public static final String SELECT_TEAMS = "SELECT * FROM team t WHERE t.season=?";
-    
-    public static final String SELECT_RACERS = "SELECT * FROM racer r WHERE r.season=?";
+    public static final String SELECT_SPAC_CATEGORIES = "SELECT * FROM spac_category";
     
     
-    // =======  PARSER  =========
-    public static final String INSERT_RACER = "INSERT INTO racer (id_category, id_team, first_name, surname, year_born, spac_number, season, team_name) " +
-    "VALUES (?,?,?,?,?,?,2010,?)";
-    
+    // =======  PARSER  =========    
     public static final String DELETE_TABLE_SPAC_RESULTS_2011 = "DELETE FROM spac_results_2011 WHERE 1=1";
     
     public static final String INSERT_RACER_SPAC_RESULT_2011 = "INSERT INTO spac_results_2011 (id_category, racer_surname, racer_firstname, racer_team," +
