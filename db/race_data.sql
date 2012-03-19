@@ -1,0 +1,1 @@
+﻿insert into race (id, name, date, place, season, notice) values(1,'Časovka ArcelorMittal','2010-05-02','STAŘÍČ - důl Paskov 2. u Frýdku - Místku',2010,);
