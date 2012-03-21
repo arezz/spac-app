@@ -14,5 +14,6 @@ public interface IFileParser {
 	
     public boolean clearDatabaseTableResultCSV(int year);
     public void parseAllResultsFromCSV2011(String fileName);
+    public void parseAllResultsFromCSV2010(String fileName);
     
 }

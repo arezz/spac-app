@@ -40,7 +40,8 @@ public class Start {
     	IFileParser parser = FileParser.getInstance();
         
         //parser.clearDatabaseTableResultCSV(2011);
-        parser.parseAllResultsFromCSV2011("C:\\poradi2011.csv");  
+        //parser.parseAllResultsFromCSV2011("C:\\poradi2011.csv");  
+        parser.parseAllResultsFromCSV2010("C:\\poradi2010.csv");
     }
     
     public static void processStatsOld() {

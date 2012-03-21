@@ -62,6 +62,8 @@ public class SpacDataManager extends AbstractDataManager implements ISpacDataMan
             PreparedStatement ps = null;
             if (year == 2011) {
                 ps = connection.prepareStatement(ESQLCommandsSpac.DELETE_TABLE_SPAC_RESULTS_2011);
+            } else if (year == 2010) {
+                ps = connection.prepareStatement(ESQLCommandsSpac.DELETE_TABLE_SPAC_RESULTS_2010);
             } else {
                 ps = connection.prepareStatement(ESQLCommandsSpac.DELETE_TABLE_SPAC_RESULTS_2011);
             }

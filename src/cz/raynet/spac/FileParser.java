@@ -38,6 +38,53 @@ public class FileParser implements IFileParser {
     }
     
     
+	public void parseAllResultsFromCSV2010(String fileName) {
+		Map<String,Category> categories = fDataManager.getCategories();
+        try {
+            FileInputStream fr = new FileInputStream(fileName);
+            InputStreamReader isr = new InputStreamReader(fr, "windows-1250");
+            BufferedReader in = new BufferedReader(isr);
+            String line;
+            Category category = null;
+            while ((line = in.readLine()) != null) {
+            	// rozlisit radek - kategorie, nazvy zavodu, zavodnici
+            	String[] cells = line.split(";");
+            	if (cells != null && cells.length > 1) {
+            		String secondCell = cells[1]; 
+            		if (secondCell == null || secondCell.length() == 0 
+            				|| secondCell.toUpperCase().startsWith("PŘÍJMENÍ")
+            				|| secondCell.toUpperCase().startsWith("KONEČNÉ")
+            				|| secondCell.toUpperCase().startsWith("13. ROČNÍK")) {
+            			// empty line, first 2 lines, skip it!
+            			continue;
+            		}
+            		// if category, recognize it
+            		if (secondCell.toUpperCase().startsWith("KATEGORIE")) {
+            			category = recognizeCategory(categories, secondCell, 2011);
+            			continue;
+            		}
+            		// if "DRUZSTVA" - the end of parsing;
+            		if (secondCell.toUpperCase().startsWith("DRUŽSTVA")) {
+            			break;
+            		}
+            		
+            		// else racer! parse him, store him! (if valid category)
+            		// TODO
+            		//RacerCSVLineDto racer = parseRacerCsvLine2010(cells, category);
+            		//if (racer != null) {
+            		// TODO
+            			// get racer / insert racer and get id
+            			// store racer into spac_result           			
+            		//}
+            	}
+            }
+            in.close();
+        } catch (IOException e) {
+          //System.err.println(e.toString());
+            e.printStackTrace();
+        }
+	}
+	
 	public void parseAllResultsFromCSV2011(String fileName) {
 		Map<String,Category> categories = fDataManager.getCategories();
         try {
@@ -57,7 +104,7 @@ public class FileParser implements IFileParser {
             		}
             		// if category, recognize it
             		if (firstCell.toUpperCase().startsWith("KATEGORIE")) {
-            			category = recognizeCategory(categories, firstCell);
+            			category = recognizeCategory(categories, firstCell, 2011	);
             			continue;
             		}
             		// if "DRUZSTVA" - the end of parsing;
@@ -81,19 +128,20 @@ public class FileParser implements IFileParser {
 	}
     
 	/**
-	 * rozpozna kategorii, kategorii Z priradi jako ZA
+	 * rozpozna kategorii
 	 * @param categories
 	 * @param firstCell
+	 * @param season platna sezona
 	 * @return
 	 */
-	private Category recognizeCategory(Map<String,Category> categories, String firstCell) {
+	private Category recognizeCategory(Map<String,Category> categories, String firstCell, int season) {
 		for (Category cat : categories.values()) {
+			if (cat.getSeason() != season) {
+				continue;
+			}
 			if (firstCell.equalsIgnoreCase("KATEGORIE " + cat.getPrefix())) {
 				return cat;
-			}
-			if (firstCell.equalsIgnoreCase("KATEGORIE Ž") && cat.getPrefix().equalsIgnoreCase("ŽA")) {
-	            return cat;
-	        }			
+			}						
 		}
 		return null;
 	}

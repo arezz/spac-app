@@ -16,6 +16,7 @@ public class Category {
     private String fPrefix;
     private String fName;
     private double fCoefficient;
+    private int fSeason;
     
     public Category() {
         
@@ -53,7 +54,15 @@ public class Category {
         fCoefficient = coefficient;
     }
     
-    @Override
+	public int getSeason() {
+		return fSeason;
+	}
+
+	public void setSeason(int season) {
+		fSeason = season;
+	}
+
+	@Override
     public String toString() {
         return fId + ", " + fPrefix + ", " + fName + ", " + fCoefficient; 
     }
