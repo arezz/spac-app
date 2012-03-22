@@ -10,30 +10,34 @@ package cz.raynet.dto;
 public class RacerCSVLineDto {
 	
 	private int fId;
+	private int fIdRacer;
 	private int fIdCategory;
-	private String fRacerSurname;
-	private String fRacerFirstname;
-	private String fRacerTeam;
-	private int fRace1;
-	private int fRace2;
-	private int fRace3;
-	private int fRace4;
-	private int fRace5;
-	private int fRace6;
-	private int fRace7;
-	private int fRace8;
-	private int fRace9;
-	private int fRace10;
-	private int fRace11;
-	private int fRace12;
-	private int fRace13;
-	private int fRace14;
-	private int fRace15;
-	private int fRace16;
-	private int fRace17;
-	private int fRace18;
-	private int fTotal;
-	private int fTotalBestRaces;
+	private String fSurname;
+	private String fFirstname;
+	private String fTeam;
+	private float fRace1;
+	private float fRace2;
+	private float fRace3;
+	private float fRace4;
+	private float fRace5;
+	private float fRace6;
+	private float fRace7;
+	private float fRace8;
+	private float fRace9;
+	private float fRace10;
+	private float fRace11;
+	private float fRace12;
+	private float fRace13;
+	private float fRace14;
+	private float fRace15;
+	private float fRace16;
+	private float fRace17;
+	private float fRace18;
+	private float fTotal;
+	private float fTotalBestRaces;
+	private int fFinalStanding;
+	private int fTotalRacers;
+	private int fSpacLicence;
 	
 	/**
 	 * @return the id
@@ -62,7 +66,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race1
 	 */
-	public int getRace1() {
+	public float getRace1() {
 		return fRace1;
 	}
 	/**
@@ -72,9 +76,15 @@ public class RacerCSVLineDto {
 		fRace1 = race1;
 	}
 	/**
+	 * @param race1 the race1 to set
+	 */
+	public void setRace1(float race1) {
+		fRace1 = race1;
+	}
+	/**
 	 * @return the race10
 	 */
-	public int getRace10() {
+	public float getRace10() {
 		return fRace10;
 	}
 	/**
@@ -86,7 +96,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race11
 	 */
-	public int getRace11() {
+	public float getRace11() {
 		return fRace11;
 	}
 	/**
@@ -98,7 +108,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race12
 	 */
-	public int getRace12() {
+	public float getRace12() {
 		return fRace12;
 	}
 	/**
@@ -110,7 +120,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race13
 	 */
-	public int getRace13() {
+	public float getRace13() {
 		return fRace13;
 	}
 	/**
@@ -122,7 +132,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race14
 	 */
-	public int getRace14() {
+	public float getRace14() {
 		return fRace14;
 	}
 	/**
@@ -134,7 +144,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race15
 	 */
-	public int getRace15() {
+	public float getRace15() {
 		return fRace15;
 	}
 	/**
@@ -146,7 +156,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race16
 	 */
-	public int getRace16() {
+	public float getRace16() {
 		return fRace16;
 	}
 	/**
@@ -158,7 +168,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race17
 	 */
-	public int getRace17() {
+	public float getRace17() {
 		return fRace17;
 	}
 	/**
@@ -170,7 +180,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race18
 	 */
-	public int getRace18() {
+	public float getRace18() {
 		return fRace18;
 	}
 	/**
@@ -182,7 +192,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race2
 	 */
-	public int getRace2() {
+	public float getRace2() {
 		return fRace2;
 	}
 	/**
@@ -194,7 +204,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race3
 	 */
-	public int getRace3() {
+	public float getRace3() {
 		return fRace3;
 	}
 	/**
@@ -206,7 +216,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race4
 	 */
-	public int getRace4() {
+	public float getRace4() {
 		return fRace4;
 	}
 	/**
@@ -218,7 +228,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race5
 	 */
-	public int getRace5() {
+	public float getRace5() {
 		return fRace5;
 	}
 	/**
@@ -230,7 +240,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race6
 	 */
-	public int getRace6() {
+	public float getRace6() {
 		return fRace6;
 	}
 	/**
@@ -242,7 +252,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race7
 	 */
-	public int getRace7() {
+	public float getRace7() {
 		return fRace7;
 	}
 	/**
@@ -254,7 +264,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race8
 	 */
-	public int getRace8() {
+	public float getRace8() {
 		return fRace8;
 	}
 	/**
@@ -266,7 +276,7 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race9
 	 */
-	public int getRace9() {
+	public float getRace9() {
 		return fRace9;
 	}
 	/**
@@ -274,47 +284,11 @@ public class RacerCSVLineDto {
 	 */
 	public void setRace9(int race9) {
 		fRace9 = race9;
-	}
-	/**
-	 * @return the racerFirstname
-	 */
-	public String getRacerFirstname() {
-		return fRacerFirstname;
-	}
-	/**
-	 * @param racerFirstname the racerFirstname to set
-	 */
-	public void setRacerFirstname(String racerFirstname) {
-		fRacerFirstname = racerFirstname;
-	}
-	/**
-	 * @return the racerTeam
-	 */
-	public String getRacerTeam() {
-		return fRacerTeam;
-	}
-	/**
-	 * @param racerTeam the racerTeam to set
-	 */
-	public void setRacerTeam(String racerTeam) {
-		fRacerTeam = racerTeam;
-	}
-	/**
-	 * @return the racerSurname
-	 */
-	public String getRacerSurname() {
-		return fRacerSurname;
-	}
-	/**
-	 * @param racerSurname the racerSurname to set
-	 */
-	public void setRacerSurname(String racerSurname) {
-		fRacerSurname = racerSurname;
-	}
+	}	
 	/**
 	 * @return the total
 	 */
-	public int getTotal() {
+	public float getTotal() {
 		return fTotal;
 	}
 	/**
@@ -326,13 +300,211 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the totalBestRaces
 	 */
-	public int getTotalBestRaces() {
+	public float getTotalBestRaces() {
 		return fTotalBestRaces;
 	}
 	/**
 	 * @param totalBestRaces the totalBestRaces to set
 	 */
 	public void setTotalBestRaces(int totalBestRaces) {
+		fTotalBestRaces = totalBestRaces;
+	}
+	/**
+	 * @return the finalStanding
+	 */
+	public int getFinalStanding() {
+		return fFinalStanding;
+	}
+	/**
+	 * @param finalStanding the finalStanding to set
+	 */
+	public void setFinalStanding(int finalStanding) {
+		fFinalStanding = finalStanding;
+	}
+	/**
+	 * @return the spacLicence
+	 */
+	public int getSpacLicence() {
+		return fSpacLicence;
+	}
+	/**
+	 * @param spacLicence the spacLicence to set
+	 */
+	public void setSpacLicence(int spacLicence) {
+		fSpacLicence = spacLicence;
+	}
+	/**
+	 * @return the totalRacers
+	 */
+	public int getTotalRacers() {
+		return fTotalRacers;
+	}
+	/**
+	 * @param totalRacers the totalRacers to set
+	 */
+	public void setTotalRacers(int totalRacers) {
+		fTotalRacers = totalRacers;
+	}
+	/**
+	 * @return the firstname
+	 */
+	public String getFirstname() {
+		return fFirstname;
+	}
+	/**
+	 * @param firstname the firstname to set
+	 */
+	public void setFirstname(String firstname) {
+		fFirstname = firstname;
+	}
+	/**
+	 * @return the idRacer
+	 */
+	public int getIdRacer() {
+		return fIdRacer;
+	}
+	/**
+	 * @param idRacer the idRacer to set
+	 */
+	public void setIdRacer(int idRacer) {
+		fIdRacer = idRacer;
+	}
+	/**
+	 * @return the surname
+	 */
+	public String getSurname() {
+		return fSurname;
+	}
+	/**
+	 * @param surname the surname to set
+	 */
+	public void setSurname(String surname) {
+		fSurname = surname;
+	}
+	/**
+	 * @return the team
+	 */
+	public String getTeam() {
+		return fTeam;
+	}
+	/**
+	 * @param team the team to set
+	 */
+	public void setTeam(String team) {
+		fTeam = team;
+	}
+	/**
+	 * @param race10 the race10 to set
+	 */
+	public void setRace10(float race10) {
+		fRace10 = race10;
+	}
+	/**
+	 * @param race11 the race11 to set
+	 */
+	public void setRace11(float race11) {
+		fRace11 = race11;
+	}
+	/**
+	 * @param race12 the race12 to set
+	 */
+	public void setRace12(float race12) {
+		fRace12 = race12;
+	}
+	/**
+	 * @param race13 the race13 to set
+	 */
+	public void setRace13(float race13) {
+		fRace13 = race13;
+	}
+	/**
+	 * @param race14 the race14 to set
+	 */
+	public void setRace14(float race14) {
+		fRace14 = race14;
+	}
+	/**
+	 * @param race15 the race15 to set
+	 */
+	public void setRace15(float race15) {
+		fRace15 = race15;
+	}
+	/**
+	 * @param race16 the race16 to set
+	 */
+	public void setRace16(float race16) {
+		fRace16 = race16;
+	}
+	/**
+	 * @param race17 the race17 to set
+	 */
+	public void setRace17(float race17) {
+		fRace17 = race17;
+	}
+	/**
+	 * @param race18 the race18 to set
+	 */
+	public void setRace18(float race18) {
+		fRace18 = race18;
+	}
+	/**
+	 * @param race2 the race2 to set
+	 */
+	public void setRace2(float race2) {
+		fRace2 = race2;
+	}
+	/**
+	 * @param race3 the race3 to set
+	 */
+	public void setRace3(float race3) {
+		fRace3 = race3;
+	}
+	/**
+	 * @param race4 the race4 to set
+	 */
+	public void setRace4(float race4) {
+		fRace4 = race4;
+	}
+	/**
+	 * @param race5 the race5 to set
+	 */
+	public void setRace5(float race5) {
+		fRace5 = race5;
+	}
+	/**
+	 * @param race6 the race6 to set
+	 */
+	public void setRace6(float race6) {
+		fRace6 = race6;
+	}
+	/**
+	 * @param race7 the race7 to set
+	 */
+	public void setRace7(float race7) {
+		fRace7 = race7;
+	}
+	/**
+	 * @param race8 the race8 to set
+	 */
+	public void setRace8(float race8) {
+		fRace8 = race8;
+	}
+	/**
+	 * @param race9 the race9 to set
+	 */
+	public void setRace9(float race9) {
+		fRace9 = race9;
+	}
+	/**
+	 * @param total the total to set
+	 */
+	public void setTotal(float total) {
+		fTotal = total;
+	}
+	/**
+	 * @param totalBestRaces the totalBestRaces to set
+	 */
+	public void setTotalBestRaces(float totalBestRaces) {
 		fTotalBestRaces = totalBestRaces;
 	}
 	
