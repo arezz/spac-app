@@ -15,26 +15,26 @@ public class RacerCSVLineDto {
 	private String fSurname;
 	private String fFirstname;
 	private String fTeam;
-	private float fRace1;
-	private float fRace2;
-	private float fRace3;
-	private float fRace4;
-	private float fRace5;
-	private float fRace6;
-	private float fRace7;
-	private float fRace8;
-	private float fRace9;
-	private float fRace10;
-	private float fRace11;
-	private float fRace12;
-	private float fRace13;
-	private float fRace14;
-	private float fRace15;
-	private float fRace16;
-	private float fRace17;
-	private float fRace18;
-	private float fTotal;
-	private float fTotalBestRaces;
+	private double fRace1;
+	private double fRace2;
+	private double fRace3;
+	private double fRace4;
+	private double fRace5;
+	private double fRace6;
+	private double fRace7;
+	private double fRace8;
+	private double fRace9;
+	private double fRace10;
+	private double fRace11;
+	private double fRace12;
+	private double fRace13;
+	private double fRace14;
+	private double fRace15;
+	private double fRace16;
+	private double fRace17;
+	private double fRace18;
+	private double fTotal;
+	private double fTotalBestRaces;
 	private int fFinalStanding;
 	private int fTotalRacers;
 	private int fSpacLicence;
@@ -66,8 +66,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race1
 	 */
-	public float getRace1() {
-		return fRace1;
+	public double getRace1() {
+		return (double)Math.round(fRace1 * 10) / 10;
 	}
 	/**
 	 * @param race1 the race1 to set
@@ -78,14 +78,14 @@ public class RacerCSVLineDto {
 	/**
 	 * @param race1 the race1 to set
 	 */
-	public void setRace1(float race1) {
+	public void setRace1(double race1) {
 		fRace1 = race1;
 	}
 	/**
 	 * @return the race10
 	 */
-	public float getRace10() {
-		return fRace10;
+	public double getRace10() {
+		return (double)Math.round(fRace10 * 10) / 10;
 	}
 	/**
 	 * @param race10 the race10 to set
@@ -96,8 +96,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race11
 	 */
-	public float getRace11() {
-		return fRace11;
+	public double getRace11() {
+		return (double)Math.round(fRace11 * 10) / 10;
 	}
 	/**
 	 * @param race11 the race11 to set
@@ -108,8 +108,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race12
 	 */
-	public float getRace12() {
-		return fRace12;
+	public double getRace12() {
+		return (double)Math.round(fRace12 * 10) / 10;
 	}
 	/**
 	 * @param race12 the race12 to set
@@ -120,8 +120,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race13
 	 */
-	public float getRace13() {
-		return fRace13;
+	public double getRace13() {
+		return (double)Math.round(fRace13 * 10) / 10;
 	}
 	/**
 	 * @param race13 the race13 to set
@@ -132,8 +132,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race14
 	 */
-	public float getRace14() {
-		return fRace14;
+	public double getRace14() {
+		return (double)Math.round(fRace14 * 10) / 10;
 	}
 	/**
 	 * @param race14 the race14 to set
@@ -144,8 +144,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race15
 	 */
-	public float getRace15() {
-		return fRace15;
+	public double getRace15() {
+		return (double)Math.round(fRace15 * 10) / 10;
 	}
 	/**
 	 * @param race15 the race15 to set
@@ -156,8 +156,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race16
 	 */
-	public float getRace16() {
-		return fRace16;
+	public double getRace16() {
+		return (double)Math.round(fRace16 * 10) / 10;
 	}
 	/**
 	 * @param race16 the race16 to set
@@ -168,8 +168,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race17
 	 */
-	public float getRace17() {
-		return fRace17;
+	public double getRace17() {
+		return (double)Math.round(fRace17 * 10) / 10;
 	}
 	/**
 	 * @param race17 the race17 to set
@@ -180,8 +180,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race18
 	 */
-	public float getRace18() {
-		return fRace18;
+	public double getRace18() {
+		return (double)Math.round(fRace18 * 10) / 10;
 	}
 	/**
 	 * @param race18 the race18 to set
@@ -192,8 +192,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race2
 	 */
-	public float getRace2() {
-		return fRace2;
+	public double getRace2() {
+		return (double)Math.round(fRace2 * 10) / 10;
 	}
 	/**
 	 * @param race2 the race2 to set
@@ -204,8 +204,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race3
 	 */
-	public float getRace3() {
-		return fRace3;
+	public double getRace3() {
+		return (double)Math.round(fRace3 * 10) / 10;
 	}
 	/**
 	 * @param race3 the race3 to set
@@ -216,8 +216,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race4
 	 */
-	public float getRace4() {
-		return fRace4;
+	public double getRace4() {
+		return (double)Math.round(fRace4 * 10) / 10;
 	}
 	/**
 	 * @param race4 the race4 to set
@@ -228,8 +228,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race5
 	 */
-	public float getRace5() {
-		return fRace5;
+	public double getRace5() {
+		return (double)Math.round(fRace5 * 10) / 10;
 	}
 	/**
 	 * @param race5 the race5 to set
@@ -240,8 +240,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race6
 	 */
-	public float getRace6() {
-		return fRace6;
+	public double getRace6() {
+		return (double)Math.round(fRace6 * 10) / 10;
 	}
 	/**
 	 * @param race6 the race6 to set
@@ -252,8 +252,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race7
 	 */
-	public float getRace7() {
-		return fRace7;
+	public double getRace7() {
+		return (double)Math.round(fRace7 * 10) / 10;
 	}
 	/**
 	 * @param race7 the race7 to set
@@ -264,8 +264,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race8
 	 */
-	public float getRace8() {
-		return fRace8;
+	public double getRace8() {
+		return (double)Math.round(fRace8 * 10) / 10;
 	}
 	/**
 	 * @param race8 the race8 to set
@@ -276,8 +276,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the race9
 	 */
-	public float getRace9() {
-		return fRace9;
+	public double getRace9() {
+		return (double)Math.round(fRace9 * 10) / 10;
 	}
 	/**
 	 * @param race9 the race9 to set
@@ -288,8 +288,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the total
 	 */
-	public float getTotal() {
-		return fTotal;
+	public double getTotal() {
+		return (double)Math.round(fTotal * 10) / 10;
 	}
 	/**
 	 * @param total the total to set
@@ -300,8 +300,8 @@ public class RacerCSVLineDto {
 	/**
 	 * @return the totalBestRaces
 	 */
-	public float getTotalBestRaces() {
-		return fTotalBestRaces;
+	public double getTotalBestRaces() {
+		return (double)Math.round(fTotalBestRaces * 10) / 10;
 	}
 	/**
 	 * @param totalBestRaces the totalBestRaces to set
@@ -396,115 +396,115 @@ public class RacerCSVLineDto {
 	/**
 	 * @param race10 the race10 to set
 	 */
-	public void setRace10(float race10) {
+	public void setRace10(double race10) {
 		fRace10 = race10;
 	}
 	/**
 	 * @param race11 the race11 to set
 	 */
-	public void setRace11(float race11) {
+	public void setRace11(double race11) {
 		fRace11 = race11;
 	}
 	/**
 	 * @param race12 the race12 to set
 	 */
-	public void setRace12(float race12) {
+	public void setRace12(double race12) {
 		fRace12 = race12;
 	}
 	/**
 	 * @param race13 the race13 to set
 	 */
-	public void setRace13(float race13) {
+	public void setRace13(double race13) {
 		fRace13 = race13;
 	}
 	/**
 	 * @param race14 the race14 to set
 	 */
-	public void setRace14(float race14) {
+	public void setRace14(double race14) {
 		fRace14 = race14;
 	}
 	/**
 	 * @param race15 the race15 to set
 	 */
-	public void setRace15(float race15) {
+	public void setRace15(double race15) {
 		fRace15 = race15;
 	}
 	/**
 	 * @param race16 the race16 to set
 	 */
-	public void setRace16(float race16) {
+	public void setRace16(double race16) {
 		fRace16 = race16;
 	}
 	/**
 	 * @param race17 the race17 to set
 	 */
-	public void setRace17(float race17) {
+	public void setRace17(double race17) {
 		fRace17 = race17;
 	}
 	/**
 	 * @param race18 the race18 to set
 	 */
-	public void setRace18(float race18) {
+	public void setRace18(double race18) {
 		fRace18 = race18;
 	}
 	/**
 	 * @param race2 the race2 to set
 	 */
-	public void setRace2(float race2) {
+	public void setRace2(double race2) {
 		fRace2 = race2;
 	}
 	/**
 	 * @param race3 the race3 to set
 	 */
-	public void setRace3(float race3) {
+	public void setRace3(double race3) {
 		fRace3 = race3;
 	}
 	/**
 	 * @param race4 the race4 to set
 	 */
-	public void setRace4(float race4) {
+	public void setRace4(double race4) {
 		fRace4 = race4;
 	}
 	/**
 	 * @param race5 the race5 to set
 	 */
-	public void setRace5(float race5) {
+	public void setRace5(double race5) {
 		fRace5 = race5;
 	}
 	/**
 	 * @param race6 the race6 to set
 	 */
-	public void setRace6(float race6) {
+	public void setRace6(double race6) {
 		fRace6 = race6;
 	}
 	/**
 	 * @param race7 the race7 to set
 	 */
-	public void setRace7(float race7) {
+	public void setRace7(double race7) {
 		fRace7 = race7;
 	}
 	/**
 	 * @param race8 the race8 to set
 	 */
-	public void setRace8(float race8) {
+	public void setRace8(double race8) {
 		fRace8 = race8;
 	}
 	/**
 	 * @param race9 the race9 to set
 	 */
-	public void setRace9(float race9) {
+	public void setRace9(double race9) {
 		fRace9 = race9;
 	}
 	/**
 	 * @param total the total to set
 	 */
-	public void setTotal(float total) {
+	public void setTotal(double total) {
 		fTotal = total;
 	}
 	/**
 	 * @param totalBestRaces the totalBestRaces to set
 	 */
-	public void setTotalBestRaces(float totalBestRaces) {
+	public void setTotalBestRaces(double totalBestRaces) {
 		fTotalBestRaces = totalBestRaces;
 	}
 	

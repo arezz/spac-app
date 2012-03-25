@@ -71,10 +71,7 @@ public class FileParser implements IFileParser {
             		// else racer! parse him, store him! (if valid category)
             		RacerCSVLineDto racerResult = parseRacerCsvLine2010(cells, category);
             		if (racerResult != null) {
-            		// TODO
-            			System.out.println(racerResult.getSurname());
-            			// retrieve racer from db / insert racer and get id
-            			// store racer into spac_result           			
+            			fDataManager.storeRacerCsvLine2010(racerResult);
             		}
             	}
             }
