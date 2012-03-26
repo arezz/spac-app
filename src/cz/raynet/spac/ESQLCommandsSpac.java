@@ -14,11 +14,7 @@ public class ESQLCommandsSpac {
 
     public static final String SELECT_SPAC_CATEGORIES = "SELECT * FROM spac_category";
     
-    
     // =======  PARSER  =========    
-    public static final String DELETE_TABLE_SPAC_RESULTS_2011 = "DELETE FROM spac_results_2011 WHERE 1=1";
-    public static final String DELETE_TABLE_SPAC_RESULTS_2010 = "DELETE FROM spac_results_2010 WHERE 1=1";
-    
     public static final String SELECT_RACER_ID = "SELECT id FROM racer WHERE surname=? AND firstname=?";
     public static final String INSERT_RACER = "INSERT INTO racer (surname,firstname) VALUES (?,?)";
     
@@ -30,12 +26,19 @@ public class ESQLCommandsSpac {
 		    		"?,?)";
     
     public static final String INSERT_RACER_SPAC_RESULT_2010 = "INSERT INTO spac_results_2010 (id_category, id_racer, surname, firstname, team," +
-	"race_1, race_2, race_3, race_4, race_5, race_6, race_7, race_8, race_9, race_10, race_11, race_12, race_13, race_14, race_15, race_16, race_17, " +
-	"total, total_best_races, final_standing, total_racers, spac_licence) \n " +
-    "VALUES (?,?,?,?,?," +
-    		"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
-    		"?,?,?,?,?)";
+			"race_1, race_2, race_3, race_4, race_5, race_6, race_7, race_8, race_9, race_10, race_11, race_12, race_13, race_14, race_15, race_16, race_17, " +
+			"total, total_best_races, final_standing, total_racers, spac_licence) \n " +
+		    "VALUES (?,?,?,?,?," +
+		    		"?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
+		    		"?,?,?,?,?)";
 
+    public static final String INSERT_RACER_SPAC_RESULT_2009 = "INSERT INTO spac_results_2009 (id_category, id_racer, surname, firstname, team," +
+		    "race_1, race_2, race_3, race_4, race_5, race_6, race_7, race_8, race_9, race_10, race_11, race_12, race_13, race_14, race_15, race_16, race_17, " +
+		    "total, total_best_races, final_standing, total_racers, spac_licence) \n " +
+		    "VALUES (?,?,?,?,?," +
+				    "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
+				    "?,?,?,?,?)";
+	    
     
     // =======  END PARSER  =========
     

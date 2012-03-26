@@ -19,8 +19,8 @@ import cz.raynet.dto.RacerCSVLineDto;
 public interface ISpacDataManager extends IDataManager {
     
 	public Map<String,Category> getCategories();
-    public boolean clearDatabaseTableResultCSV(int year);    
     public void storeRacerCsvLine2011(RacerCSVLineDto racer);
     public void storeRacerCsvLine2010(RacerCSVLineDto racer);
+    public void storeRacerCsvLine2009(RacerCSVLineDto racer);
     
 }
