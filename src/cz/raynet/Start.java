@@ -41,8 +41,9 @@ public class Start {
         
         //parser.clearDatabaseTableResultCSV(XXXX);
         //parser.parseAllResultsFromCSV2011("C:\\poradi2011.csv");  
-        parser.parseAllResultsFromCSV2010("C:\\poradi2010.csv");
-    	parser.parseAllResultsFromCSV2009("C:\\poradi2009.csv");
+        //parser.parseAllResultsFromCSV2010("C:\\poradi2010.csv");
+    	//parser.parseAllResultsFromCSV2009("C:\\poradi2009.csv");
+    	parser.parseAllResultsFromCSV2008("C:\\poradi2008.csv");
     }
     
     public static void processStatsOld() {
