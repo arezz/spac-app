@@ -46,6 +46,13 @@ public class ESQLCommandsSpac {
     "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
     "?,?,?,?,?)";
 	    
+    public static final String INSERT_RACER_SPAC_RESULT_2007 = "INSERT INTO spac_results_2007 (id_category, id_racer, surname, firstname, team," +
+    "race_1, race_2, race_3, race_4, race_5, race_6, race_7, race_8, race_9, race_10, race_11, race_12, race_13, race_14, " +
+    "total, total_best_races, final_standing, total_racers) \n " +
+    "VALUES (?,?,?,?,?," +
+    "?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
+    "?,?,?,?)";
+    
     
     // =======  END PARSER  =========
     

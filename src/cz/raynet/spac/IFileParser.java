@@ -16,5 +16,6 @@ public interface IFileParser {
     public void parseAllResultsFromCSV2010(String fileName);
     public void parseAllResultsFromCSV2009(String fileName);
     public void parseAllResultsFromCSV2008(String fileName);
+    public void parseAllResultsFromCSV2007(String fileName);
     
 }
