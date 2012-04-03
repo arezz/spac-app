@@ -24,5 +24,9 @@ public interface ISpacDataManager extends IDataManager {
     public void storeRacerCsvLine2009(RacerCSVLineDto racer);
     public void storeRacerCsvLine2008(RacerCSVLineDto racer);
     public void storeRacerCsvLine2007(RacerCSVLineDto racer);
+    public void storeRacerCsvLine2006(RacerCSVLineDto racer);
+    public void storeRacerCsvLine2005(RacerCSVLineDto racer);
+    public void storeRacerCsvLine2004(RacerCSVLineDto racer);
+    public void storeRacerCsvLine2003(RacerCSVLineDto racer);
     
 }

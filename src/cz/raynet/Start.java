@@ -44,7 +44,11 @@ public class Start {
         //parser.parseAllResultsFromCSV2010("C:\\poradi2010.csv");
     	//parser.parseAllResultsFromCSV2009("C:\\poradi2009.csv");
     	//parser.parseAllResultsFromCSV2008("C:\\poradi2008.csv");
-    	parser.parseAllResultsFromCSV2007("C:\\poradi2007.csv");
+    	//parser.parseAllResultsFromCSV2007("C:\\poradi2007.csv");
+    	//parser.parseAllResultsFromCSV2006("C:\\poradi2006.csv");
+    	//parser.parseAllResultsFromCSV2005("C:\\poradi2005.csv");
+    	//parser.parseAllResultsFromCSV2004("C:\\poradi2004.csv");
+    	//parser.parseAllResultsFromCSV2003("C:\\poradi2003.csv");
     }
     
     public static void processStatsOld() {

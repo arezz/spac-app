@@ -53,6 +53,34 @@ public class ESQLCommandsSpac {
     "?,?,?,?,?,?,?,?,?,?,?,?,?,?," +
     "?,?,?,?)";
     
+    public static final String INSERT_RACER_SPAC_RESULT_2006 = "INSERT INTO spac_results_2006 (id_category, id_racer, surname, firstname, team," +
+    "race_1, race_2, race_3, race_4, race_5, " +
+    "total, final_standing, total_racers) \n " +
+    "VALUES (?,?,?,?,?," +
+    "?,?,?,?,?," +
+    "?,?,?)";
+    
+    public static final String INSERT_RACER_SPAC_RESULT_2005 = "INSERT INTO spac_results_2005 (id_category, id_racer, surname, firstname, team," +
+    "race_1, race_2, race_3, race_4, race_5, race_6, race_7,  " +
+    "total, total_best_races, final_standing, total_racers) \n " +
+    "VALUES (?,?,?,?,?," +
+    "?,?,?,?,?,?,?," +
+    "?,?,?,?)";
+    
+    public static final String INSERT_RACER_SPAC_RESULT_2004 = "INSERT INTO spac_results_2004 (id_category, id_racer, surname, firstname, team," +
+    "race_1, race_2, race_3, race_4, race_5, race_6, race_7, race_8, race_9, race_10, race_11, race_12, " +
+    "total, total_best_races, final_standing, total_racers) \n " +
+    "VALUES (?,?,?,?,?," +
+    "?,?,?,?,?,?,?,?,?,?,?,?," +
+    "?,?,?,?)";
+    
+    public static final String INSERT_RACER_SPAC_RESULT_2003 = "INSERT INTO spac_results_2003 (id_category, id_racer, surname, firstname, team," +
+    "race_1, race_2, race_3, race_4, race_5, race_6, race_7, race_8, race_9, race_10, race_11, " +
+    "total, total_best_races, final_standing, total_racers) \n " +
+    "VALUES (?,?,?,?,?," +
+    "?,?,?,?,?,?,?,?,?,?,?," +
+    "?,?,?,?)";
+    
     
     // =======  END PARSER  =========
     
