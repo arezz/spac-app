@@ -528,4 +528,211 @@ public class SpacDataManager extends AbstractDataManager implements ISpacDataMan
     	}
     }
     
+    public void storeRacerCsvLine2002(RacerCSVLineDto racer) {
+    	Connection connection = null;
+    	try {
+    		connection = getDAO().getConnection();
+    		
+    		int idRacer = retrieveStoreRacer(racer, connection);
+    		
+    		PreparedStatement ps = null;
+    		
+    		// store racer into spac_result
+    		if (connection == null || connection.isClosed()) {
+    			connection = getDAO().getConnection();
+    		}            
+    		ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER_SPAC_RESULT_2002);
+    		ps.setInt(1, racer.getIdCategory());
+    		ps.setInt(2, idRacer);
+    		ps.setString(3, racer.getSurname());
+    		ps.setString(4, racer.getFirstname());
+    		ps.setString(5, racer.getTeam());
+    		ps.setInt(6, (int)Math.round(racer.getTotal()));
+    		ps.setInt(7, racer.getFinalStanding());
+    		ps.setInt(8, racer.getTotalRacers());
+    		
+    		ps.executeUpdate();
+    		
+    		ps.close();
+    	} catch (SQLException e) {
+    		//System.err.println(e.toString());
+    		e.printStackTrace();
+    	}
+    }
+    
+    public void storeRacerCsvLine2001(RacerCSVLineDto racer) {
+    	Connection connection = null;
+    	try {
+    		connection = getDAO().getConnection();
+    		
+    		int idRacer = retrieveStoreRacer(racer, connection);
+    		
+    		PreparedStatement ps = null;
+    		
+    		// store racer into spac_result
+    		if (connection == null || connection.isClosed()) {
+    			connection = getDAO().getConnection();
+    		}            
+    		ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER_SPAC_RESULT_2001);
+    		ps.setInt(1, racer.getIdCategory());
+    		ps.setInt(2, idRacer);
+    		ps.setString(3, racer.getSurname());
+    		ps.setString(4, racer.getFirstname());
+    		ps.setString(5, racer.getTeam());
+    		ps.setInt(6, (int)Math.round(racer.getTotal()));
+    		ps.setInt(7, racer.getFinalStanding());
+    		ps.setInt(8, racer.getTotalRacers());
+    		
+    		ps.executeUpdate();
+    		
+    		ps.close();
+    	} catch (SQLException e) {
+    		//System.err.println(e.toString());
+    		e.printStackTrace();
+    	}
+    }
+    
+    public void storeRacerCsvLine2000(RacerCSVLineDto racer) {
+        Connection connection = null;
+        try {
+            connection = getDAO().getConnection();
+            PreparedStatement ps = null;
+            // retrieve racer from db / insert racer and get id
+            connection = getDAO().getConnection();
+            
+            int idRacer = retrieveStoreRacer(racer, connection);
+            
+        	// store racer into spac_result
+            if (connection == null || connection.isClosed()) {
+            	connection = getDAO().getConnection();
+            }            
+            ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER_SPAC_RESULT_2000);
+            ps.setInt(1, racer.getIdCategory());
+            ps.setInt(2, idRacer);
+            ps.setString(3, racer.getSurname());
+            ps.setString(4, racer.getFirstname());
+            ps.setString(5, racer.getTeam());
+            ps.setInt(6, (int)Math.round(racer.getRace1()));
+            ps.setInt(7, (int)Math.round(racer.getRace2()));
+            ps.setInt(8, (int)Math.round(racer.getRace3()));
+            ps.setInt(9, (int)Math.round(racer.getRace4()));
+            ps.setInt(10, (int)Math.round(racer.getRace5()));
+            ps.setInt(11, (int)Math.round(racer.getRace6()));
+            ps.setInt(12, (int)Math.round(racer.getRace7()));
+            ps.setInt(13, (int)Math.round(racer.getRace8()));
+            ps.setInt(14, (int)Math.round(racer.getRace9()));
+            ps.setInt(15, (int)Math.round(racer.getRace10()));
+            ps.setInt(16, (int)Math.round(racer.getRace11()));
+            ps.setInt(17, (int)Math.round(racer.getRace12()));
+            ps.setInt(18, (int)Math.round(racer.getRace13()));
+            ps.setInt(19, (int)Math.round(racer.getRace14()));
+            ps.setInt(20, (int)Math.round(racer.getRace15()));
+            ps.setInt(21, (int)Math.round(racer.getRace16()));
+            ps.setInt(22, (int)Math.round(racer.getRace17()));
+            
+            ps.setInt(23, (int)Math.round(racer.getTotal()));
+            ps.setInt(24, (int)Math.round(racer.getTotalBestRaces()));
+            
+            ps.setInt(25, racer.getFinalStanding());
+            ps.setInt(26, racer.getTotalRacers());
+
+            ps.executeUpdate();
+            
+            ps.close();
+        } catch (SQLException e) {
+          //System.err.println(e.toString());
+            e.printStackTrace();
+        }
+    }
+    
+    public void storeRacerCsvLine1999(RacerCSVLineDto racer) {
+    	Connection connection = null;
+    	try {
+    		connection = getDAO().getConnection();
+    		
+    		int idRacer = retrieveStoreRacer(racer, connection);
+    		
+    		PreparedStatement ps = null;
+    		
+    		// store racer into spac_result
+    		if (connection == null || connection.isClosed()) {
+    			connection = getDAO().getConnection();
+    		}            
+    		ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER_SPAC_RESULT_1999);
+    		ps.setInt(1, racer.getIdCategory());
+    		ps.setInt(2, idRacer);
+    		ps.setString(3, racer.getSurname());
+    		ps.setString(4, racer.getFirstname());
+    		ps.setString(5, racer.getTeam());
+    		ps.setInt(6, (int)Math.round(racer.getRace1()));
+    		ps.setInt(7, (int)Math.round(racer.getRace2()));
+    		ps.setInt(8, (int)Math.round(racer.getRace3()));
+    		ps.setInt(9, (int)Math.round(racer.getRace4()));
+    		ps.setInt(10, (int)Math.round(racer.getRace5()));
+    		ps.setInt(11, (int)Math.round(racer.getRace6()));
+    		ps.setInt(12, (int)Math.round(racer.getRace7()));
+    		ps.setInt(13, (int)Math.round(racer.getRace8()));
+    		ps.setInt(14, (int)Math.round(racer.getRace9()));
+    		
+    		ps.setInt(15, (int)Math.round(racer.getTotal()));
+    		ps.setInt(16, (int)Math.round(racer.getTotalBestRaces()));
+    		
+    		ps.setInt(17, racer.getFinalStanding());
+    		ps.setInt(18, racer.getTotalRacers());
+    		
+    		ps.executeUpdate();
+    		
+    		ps.close();
+    	} catch (SQLException e) {
+    		//System.err.println(e.toString());
+    		e.printStackTrace();
+    	}
+    }
+    
+    public void storeRacerCsvLine1998(RacerCSVLineDto racer) {
+    	Connection connection = null;
+    	try {
+    		connection = getDAO().getConnection();
+    		
+    		int idRacer = retrieveStoreRacer(racer, connection);
+    		
+    		PreparedStatement ps = null;
+    		
+    		// store racer into spac_result
+    		if (connection == null || connection.isClosed()) {
+    			connection = getDAO().getConnection();
+    		}            
+    		ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER_SPAC_RESULT_1998);
+    		ps.setInt(1, racer.getIdCategory());
+    		ps.setInt(2, idRacer);
+    		ps.setString(3, racer.getSurname());
+    		ps.setString(4, racer.getFirstname());
+    		ps.setString(5, racer.getTeam());
+    		ps.setInt(6, (int)Math.round(racer.getRace1()));
+    		ps.setInt(7, (int)Math.round(racer.getRace2()));
+    		ps.setInt(8, (int)Math.round(racer.getRace3()));
+    		ps.setInt(9, (int)Math.round(racer.getRace4()));
+    		ps.setInt(10, (int)Math.round(racer.getRace5()));
+    		ps.setInt(11, (int)Math.round(racer.getRace6()));
+    		ps.setInt(12, (int)Math.round(racer.getRace7()));
+    		ps.setInt(13, (int)Math.round(racer.getRace8()));
+    		ps.setInt(14, (int)Math.round(racer.getRace9()));
+    		ps.setInt(15, (int)Math.round(racer.getRace10()));
+    		ps.setInt(16, (int)Math.round(racer.getRace11()));
+    		
+    		ps.setInt(17, (int)Math.round(racer.getTotal()));
+    		ps.setInt(18, (int)Math.round(racer.getTotalBestRaces()));
+    		
+    		ps.setInt(19, racer.getFinalStanding());
+    		ps.setInt(20, racer.getTotalRacers());
+    		
+    		ps.executeUpdate();
+    		
+    		ps.close();
+    	} catch (SQLException e) {
+    		//System.err.println(e.toString());
+    		e.printStackTrace();
+    	}
+    }
+    
 }
