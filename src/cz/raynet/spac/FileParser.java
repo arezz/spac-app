@@ -292,6 +292,7 @@ public class FileParser implements IFileParser {
 						if (category == null) {
 							category = recognizeCategory(categories, secondCell, 2011);
 						}
+						System.out.println();
 						continue;
 					}
 					// if "DRUZSTVA" - the end of parsing;
@@ -952,7 +953,7 @@ public class FileParser implements IFileParser {
 			racer.setSurname(cells[1]);
 			racer.setFirstname(cells[2]);
 			racer.setTeam(cells[3]);
-			racer.setTotalBestRaces(Float.parseFloat(cells[4].replace(",", ".")));
+			racer.setTotal(Float.parseFloat(cells[4].replace(",", ".")));
 			String points = cells[5]; 
 			racer.setRace1((points == null || "DQ".equalsIgnoreCase(points) || "DQ ".equalsIgnoreCase(points) || "DNF".equalsIgnoreCase(points)) ? 0 : Float.parseFloat(cells[5].replace(",", ".")));		
 			points = cells[6]; racer.setRace2((points == null || "DQ".equalsIgnoreCase(points) || "DQ ".equalsIgnoreCase(points) || "DNF".equalsIgnoreCase(points)) ? 0 : Float.parseFloat(cells[6].replace(",", ".")));	
