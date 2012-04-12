@@ -9,7 +9,6 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -53,7 +52,8 @@ public class FileParser implements IFileParser {
             		}
             		// if category, recognize it
             		if (firstCell.toUpperCase().startsWith("KATEGORIE")) {
-            			category = recognizeCategory(categories, firstCell, 2011	);
+            			category = recognizeCategory(categories, firstCell, 2011);
+            			System.out.println();
             			continue;
             		}
             		// if "DRUZSTVA" - the end of parsing;
@@ -66,6 +66,7 @@ public class FileParser implements IFileParser {
             		if (racer != null) {
             			// store racer into DB
             			fDataManager.storeRacerCsvLine2011(racer);
+            			System.out.print(".");
             		}
             	}
             }
@@ -722,7 +723,7 @@ public class FileParser implements IFileParser {
 	}
 	
 	private RacerCSVLineDto parseRacerCsvLine2011(String[] cells, Category category) {
-		if (category == null || cells.length < 21) {
+		if (category == null || cells.length < 25) {
 			return null;
 		}
 		RacerCSVLineDto racer = new RacerCSVLineDto();
@@ -767,21 +768,12 @@ public class FileParser implements IFileParser {
 			points = Math.round(Float.parseFloat(cells[19].replace(",", ".")));
 			racer.setRace17(points);		results.add(points);
 			points = Math.round(Float.parseFloat(cells[20].replace(",", ".")));
-			racer.setRace18(points);		results.add(points);
+			racer.setRace18(points);		results.add(points);			
 			
-			Collections.sort(results);			
-			int total = 0;
-			int totalBest = 0;
-			if (results.size() == 18) {
-				for (int i = 0; i < 18; i++) {
-					total += results.get(i);
-					if (i >= 9) {
-						totalBest += results.get(i);
-					}
-				}
-			}			
-			racer.setTotal(total);
-			racer.setTotalBestRaces(totalBest);
+			racer.setTotal(Float.parseFloat(cells[21].replace(",", ".")));
+			racer.setFinalStanding(Integer.parseInt(cells[22].replace(".", "")));
+			racer.setTotalBestRaces(Float.parseFloat(cells[23].replace(",", ".")));
+            racer.setTotalRacers(Integer.parseInt(cells[24]));
 			
 			return racer;			
 		} catch (Exception e) {

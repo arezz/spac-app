@@ -83,32 +83,43 @@ public class SpacDataManager extends AbstractDataManager implements ISpacDataMan
         Connection connection = null;
         try {
             connection = getDAO().getConnection();
+            
+            int idRacer = retrieveStoreRacer(racer, connection);
+
+            if (connection == null || connection.isClosed()) {
+                connection = getDAO().getConnection();
+            } 
+            
             PreparedStatement ps = connection.prepareStatement(ESQLCommandsSpac.INSERT_RACER_SPAC_RESULT_2011);
             ps.setInt(1, racer.getIdCategory());
-            ps.setString(2, racer.getSurname());
-            ps.setString(3, racer.getFirstname());
-            ps.setString(4, racer.getTeam());
-            ps.setInt(5, (int)Math.round(racer.getRace1()));
-            ps.setInt(6, (int)Math.round(racer.getRace2()));
-            ps.setInt(7, (int)Math.round(racer.getRace3()));
-            ps.setInt(8, (int)Math.round(racer.getRace4()));
-            ps.setInt(9, (int)Math.round(racer.getRace5()));
-            ps.setInt(10, (int)Math.round(racer.getRace6()));
-            ps.setInt(11, (int)Math.round(racer.getRace7()));
-            ps.setInt(12, (int)Math.round(racer.getRace8()));
-            ps.setInt(13, (int)Math.round(racer.getRace9()));
-            ps.setInt(14, (int)Math.round(racer.getRace10()));
-            ps.setInt(15, (int)Math.round(racer.getRace11()));
-            ps.setInt(16, (int)Math.round(racer.getRace12()));
-            ps.setInt(17, (int)Math.round(racer.getRace13()));
-            ps.setInt(18, (int)Math.round(racer.getRace14()));
-            ps.setInt(19, (int)Math.round(racer.getRace15()));
-            ps.setInt(20, (int)Math.round(racer.getRace16()));
-            ps.setInt(21, (int)Math.round(racer.getRace17()));
-            ps.setInt(22, (int)Math.round(racer.getRace18()));
+            ps.setInt(2, idRacer);
+            ps.setString(3, racer.getSurname());
+            ps.setString(4, racer.getFirstname());
+            ps.setString(5, racer.getTeam());
+            ps.setInt(6, (int)Math.round(racer.getRace1()));
+            ps.setInt(7, (int)Math.round(racer.getRace2()));
+            ps.setInt(8, (int)Math.round(racer.getRace3()));
+            ps.setInt(9, (int)Math.round(racer.getRace4()));
+            ps.setInt(10, (int)Math.round(racer.getRace5()));
+            ps.setInt(11, (int)Math.round(racer.getRace6()));
+            ps.setInt(12, (int)Math.round(racer.getRace7()));
+            ps.setInt(13, (int)Math.round(racer.getRace8()));
+            ps.setInt(14, (int)Math.round(racer.getRace9()));
+            ps.setInt(15, (int)Math.round(racer.getRace10()));
+            ps.setInt(16, (int)Math.round(racer.getRace11()));
+            ps.setInt(17, (int)Math.round(racer.getRace12()));
+            ps.setInt(18, (int)Math.round(racer.getRace13()));
+            ps.setInt(19, (int)Math.round(racer.getRace14()));
+            ps.setInt(20, (int)Math.round(racer.getRace15()));
+            ps.setInt(21, (int)Math.round(racer.getRace16()));
+            ps.setInt(22, (int)Math.round(racer.getRace17()));
+            ps.setInt(23, (int)Math.round(racer.getRace18()));
             
-            ps.setInt(23, (int)Math.round(racer.getTotal()));
-            ps.setInt(24, (int)Math.round(racer.getTotalBestRaces()));
+            ps.setInt(24, (int)Math.round(racer.getTotal()));
+            ps.setInt(25, (int)Math.round(racer.getTotalBestRaces()));
+            
+            ps.setInt(26, racer.getFinalStanding());
+            ps.setInt(27, racer.getTotalRacers());
 
             ps.executeUpdate();
             
